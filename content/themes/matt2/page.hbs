@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    {{> "navbar"}}
+
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <div>
+                <h1 class="page-title">{{title}}</h1>
+            </div>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+<main class="content" id="content" role="main">
+
+    <article class="{{post_class}}">
+    {{! Everything inside the #post tags pulls data from the post }}
+        <section class="post-content">
+            {{content}}
+        </section>
+
+    </article>
+
+</main>
+{{/post}}
